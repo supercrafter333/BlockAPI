@@ -12,10 +12,12 @@ class BlockAPI
 {
 
     public $player;
+    protected $config;
 
     public function __construct(Player $player)
     {
         $this->player = $player;
+        $this->config = new Config(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $player->getName() . ".yml", 2);
     }
 
     public static function getConfigurationManager(Player $player): Config
@@ -49,20 +51,20 @@ class BlockAPI
         $date = new DateTime("now");
         $date->format("Y-m-d H:i");
         if (file_exists(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $this->getPlayerName() . ".yml")) {
-            $exitsdate = new DateTime(BlockAPI::getConfigurationManager($this->player)->get("date"));
+            $exitsdate = new DateTime($this->config->get("date"));
             if ($date >= $exitsdate) {
                 BlockAPI::getUnblockManager($this->getPlayerName())->unBlock();
             } else {
-                BlockAPI::getConfigurationManager($this->player)->set("date", $bantime);
-                BlockAPI::getConfigurationManager($this->player)->save();
+                $this->config->set("date", $bantime);
+                $this->config->save();
             }
         }
     }
 
     public function setBlockReason(string $reason)
     {
-            BlockAPI::getConfigurationManager($this->player)->set("reason", $reason);
-            BlockAPI::getConfigurationManager($this->player)->save();
+        $this->config->set("reason", $reason);
+        $this->config->save();
     }
 
     public function checkBlockStatus(Player $player): bool
@@ -70,7 +72,7 @@ class BlockAPI
         $date = new DateTime("now");
         $date->format("Y-m-d H:i");
         if (file_exists(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $player->getName() . ".yml")) {
-            $exitsdate = new DateTime(BlockAPI::getConfigurationManager($player)->get("date"));
+            $exitsdate = new DateTime($this->config->get("date"));
             if ($date >= $exitsdate) {
                 return true;
             } else {
@@ -81,19 +83,19 @@ class BlockAPI
     }
 
     public function setBlocker(Player $player) {
-        BlockAPI::getConfigurationManager($this->player)->set("blocker", $player->getName());
-        BlockAPI::getConfigurationManager($this->player)->save();
+        $this->config->set("blocker", $player->getName());
+        $this->config->save();
     }
 
     public function getBlockTime() {
-        return BlockAPI::getConfigurationManager($this->player)->get("date");
+        return $this->config->get("date");
     }
 
     public function getBlockReason() {
-        return BlockAPI::getConfigurationManager($this->player)->get("reason");
+        return $this->config->get("reason");
     }
 
     public function getBlocker() {
-        return BlockAPI::getConfigurationManager($this->player)->get("blocker");
+        return $this->config->get("blocker");
     }
 }
