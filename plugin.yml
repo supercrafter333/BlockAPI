@@ -1,0 +1,20 @@
+name: BlockAPI
+version: 1.0.0
+api: 3.0.0
+main: supercrafter333\BlockAPI\BlockAPILoader
+author: supercrafter333
+
+permissions:
+  blockapi.admin:
+    description: Bypass permission
+    default: op
+    children:
+      blockapi.block.cmd:
+        description: Command permission
+        default: op
+      blockapi.unblock.cmd:
+        description: Command permission
+        default: op
+      blockapi.checkblockstatus.cmd:
+        description: Command permission
+        default: op

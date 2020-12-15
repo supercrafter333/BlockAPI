@@ -1,0 +1,25 @@
+#messages
+#no uses
+false-date-format: "§cYou've used a false date format, pls use §bminute §aor §bhour §aor §bday §aor §bmoth §aor §byear§c!"
+argument-two-was-not-a-number: "§cArgument two must bee a number!"
+argument-two-must-bee-over-null: "§cArgument two must bee over null!"
+#uses: {invalid_player}
+player-not-found: "§cSorry! The player {invalid_player} isn't online!"
+#no uses
+only-In-Game: "You can use this command only In-Game!"
+no-permissions-to-use: "§4You don't have permissions to use this!"
+#uses: {name}
+successful-unblocked: "§aYou've successfully unblocked the player {name}!"
+player-is-blocked: "§bThe player {name} is blocked!"
+player-is-not-blocked: "§bThe player {name} isn't blocked!"
+#uses: {line} {unblockdate} {blocker} {reason}
+you-are-blocked-screen-text: "§4You are Blocked! You can't Join to this server when you are blocked!{line}§bBlocked to: §e{unblockdate}{line}§bBlocked by: §e{blocker}{line}§bReason: §e{reason}"
+you-was-blocked-screen-text: "§4You are Blocked!{line}§bBlocked to: §e{unblockdate}{line}§bBlocked by: §e{blocker}{line}§bReason: §e{reason}"
+#no uses
+#prefix
+prefix: "§f[§9Block§7API§f] §8» §r"
+
+#don't change this
+version: 1.0.0
+
+#plugin by supercrafter333 with Apache 2.0 License

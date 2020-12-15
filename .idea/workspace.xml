@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b3b320f8-348d-47a7-9f3c-649a11321f66" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="2e508f06-5925-44cd-9ed0-902efc58cd33" />
+  </component>
+  <component name="ProjectId" id="1lZYV6vB2T8IqGDivL6DBXjLYlg" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../theWarn" />
+    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\crwgd\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b3b320f8-348d-47a7-9f3c-649a11321f66" name="Default Changelist" comment="" />
+      <created>1607806101395</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1607806101395</updated>
+      <workItem from="1607806102676" duration="9421000" />
+      <workItem from="1607848332291" duration="6000" />
+      <workItem from="1607849371325" duration="4975000" />
+      <workItem from="1607854523757" duration="4602000" />
+      <workItem from="1607861057437" duration="253000" />
+      <workItem from="1607880673255" duration="850000" />
+      <workItem from="1607884519473" duration="521000" />
+      <workItem from="1607887870815" duration="1208000" />
+      <workItem from="1607897641529" duration="12000" />
+      <workItem from="1608043807851" duration="735000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <confirmMoveToFailedCommit value="2" />
+  </component>
+</project>
