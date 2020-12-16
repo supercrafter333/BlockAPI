@@ -47,10 +47,11 @@ class BlockAPILoader extends PluginBase implements Listener
     public function onPreLogin(PlayerPreLoginEvent $event) {
         $player = $event->getPlayer();
         $name = $player->getName();
-        if(BlockAPI::getBlockManager($player)->checkBlockStatus($player) == true) {
+        if(BlockAPI::getUnBlockManager($name)->checkBlockStatus($name) == true) {
             $player->close("", str_replace(["{line}"], ["\n"], str_replace(["{unblockdate}"], [BlockAPI::getBlockManager($player)->getBlockTime()], str_replace(["{reason}"], [BlockAPI::getBlockManager($player)->getBlockReason()], str_replace(["{blocker}"], [BlockAPI::getBlockManager($player)->getBlocker()], $this->config->get("you-are-blocked-screen-text"))))));
             $event->setCancelled(true);
         } else {
+            BlockAPI::getUnblockManager($name)->unBlock();
             $event->setCancelled(false);
         }
     }

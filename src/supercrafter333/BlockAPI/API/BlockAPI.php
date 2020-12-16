@@ -46,16 +46,14 @@ class BlockAPI
 
     public function setBlockTime(int $amount, string $timeformat)
     {
-        $bantime = new DateTime("+" . $amount . $timeformat);
-        $bantime->format("Y-m-d H:i");
+        $bantime = new DateTime('+' . $amount . ' ' . $timeformat);
         $date = new DateTime("now");
-        $date->format("Y-m-d H:i");
         if (file_exists(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $this->getPlayerName() . ".yml")) {
             $exitsdate = new DateTime($this->config->get("date"));
             if ($date >= $exitsdate) {
                 BlockAPI::getUnblockManager($this->getPlayerName())->unBlock();
             } else {
-                $this->config->set("date", $bantime);
+                $this->config->set("date", $bantime->format("Y-m-d H:i:s"));
                 $this->config->save();
             }
         }
@@ -70,7 +68,6 @@ class BlockAPI
     public function checkBlockStatus(Player $player): bool
     {
         $date = new DateTime("now");
-        $date->format("Y-m-d H:i");
         if (file_exists(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $player->getName() . ".yml")) {
             $exitsdate = new DateTime($this->config->get("date"));
             if ($date >= $exitsdate) {
