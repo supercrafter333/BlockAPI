@@ -21,7 +21,8 @@ class OffBlockAPI
         return new Config(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $player . ".yml");
     }
 
-    public function unBlock() {
+    public function unBlock(): bool
+    {
         if (file_exists(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $this->name . ".yml")) {
             unlink(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $this->name . ".yml");
             return true;
@@ -33,7 +34,6 @@ class OffBlockAPI
     public function checkBlockStatus(string $name): bool
     {
         $date = new DateTime("now");
-        $date->format("Y-m-d H:i");
         if (file_exists(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $name . ".yml")) {
             $exitsdate = new DateTime(OffBlockAPI::getExtraConfigurationManager($name)->get("date"));
             if ($date >= $exitsdate) {
