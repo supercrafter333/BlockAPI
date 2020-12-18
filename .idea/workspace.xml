@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b3b320f8-348d-47a7-9f3c-649a11321f66" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/API/BlockAPI.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/API/BlockAPI.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/API/OffBlockAPI.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/API/OffBlockAPI.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/BlockAPILoader.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/BlockAPILoader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +34,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../theBan" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -65,6 +63,10 @@
       <workItem from="1608123355551" duration="5624000" />
       <workItem from="1608136299499" duration="4452000" />
       <workItem from="1608149526593" duration="525000" />
+      <workItem from="1608225367861" duration="22000" />
+      <workItem from="1608225464633" duration="471000" />
+      <workItem from="1608247917625" duration="851000" />
+      <workItem from="1608308261922" duration="1407000" />
     </task>
     <servers />
   </component>
@@ -82,7 +84,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="dev" />
+                        <option value="master" />
                       </list>
                     </value>
                   </entry>
