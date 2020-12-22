@@ -1,7 +1,7 @@
 # BlockAPI
 
 This is a plugin and a API.
-Pocketmines BanAPI is Okay, but I think that anybode will another API or a API with config and ban files.
+PocketMines BanAPI is Okay, but I think that anybody will another API or a API with config and ban files.
 This plugin contains Commands and a API to ban players with timer.
 
 ### Features
