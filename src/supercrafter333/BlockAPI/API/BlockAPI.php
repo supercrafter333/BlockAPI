@@ -20,12 +20,6 @@ class BlockAPI
         $this->config = new Config(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $player->getName() . ".yml", 2);
     }
 
-    public static function getConfigurationManager(Player $player): Config
-    {
-        $config = new Config(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $player->getName() . ".yml", 2);
-        return $config;
-    }
-
     public static function getBlockManager(Player $player) {
         return new BlockAPI($player);
     }
@@ -76,7 +70,7 @@ class BlockAPI
                 return false;
             }
         }
-        return false;
+        return true;
     }
 
     public function setBlocker(Player $player) {

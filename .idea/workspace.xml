@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b3b320f8-348d-47a7-9f3c-649a11321f66" name="Default Changelist" comment="">
+    <list default="true" id="b3b320f8-348d-47a7-9f3c-649a11321f66" name="Default Changelist" comment="Update README.md and add LICENSE">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/API/BlockAPI.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/API/BlockAPI.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,8 +66,19 @@
       <workItem from="1608225367861" duration="22000" />
       <workItem from="1608225464633" duration="471000" />
       <workItem from="1608247917625" duration="851000" />
-      <workItem from="1608308261922" duration="1407000" />
+      <workItem from="1608308261922" duration="1651000" />
+      <workItem from="1608408913146" duration="13000" />
+      <workItem from="1608749371740" duration="1648000" />
+      <workItem from="1608808656228" duration="216000" />
     </task>
+    <task id="LOCAL-00001" summary="Update README.md and add LICENSE">
+      <created>1608309702647</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1608309702647</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -99,5 +110,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <confirmMoveToFailedCommit value="2" />
+    <MESSAGE value="Update README.md and add LICENSE" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update README.md and add LICENSE" />
   </component>
 </project>
