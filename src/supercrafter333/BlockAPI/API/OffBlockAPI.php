@@ -44,7 +44,4 @@ class OffBlockAPI
         }
         return true;
     }
-    /*API documantation? Here: [API Documantation](https://github.com/supercrafter333/BlockAPI/wiki/Documantation)
-
-**Do you have Questions? Contact me on Discord: supercrafter333#4062***/
 }
