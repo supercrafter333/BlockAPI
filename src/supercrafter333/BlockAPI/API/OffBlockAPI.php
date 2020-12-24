@@ -37,11 +37,14 @@ class OffBlockAPI
         if (file_exists(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $name . ".yml")) {
             $exitsdate = new DateTime(OffBlockAPI::getExtraConfigurationManager($name)->get("date"));
             if ($date >= $exitsdate) {
-                return false;
-            } else {
                 return true;
+            } else {
+                return false;
             }
         }
-        return false;
+        return true;
     }
+    /*API documantation? Here: [API Documantation](https://github.com/supercrafter333/BlockAPI/wiki/Documantation)
+
+**Do you have Questions? Contact me on Discord: supercrafter333#4062***/
 }
