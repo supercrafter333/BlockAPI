@@ -23,7 +23,7 @@ Owner: supercrafter333
 
 main developer: supercrafter333
 
-icon: --no icon-- are anybody can create a Icon for this Plugins? xD
+icon: --no icon-- are anybody can create a Icon for this Plugin? xD
 
 Thanks to: jasonwhynn10 (who helped me a bit)
 
