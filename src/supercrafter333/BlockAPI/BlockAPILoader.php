@@ -31,7 +31,7 @@ class BlockAPILoader extends PluginBase implements Listener
         $pluginMgr->registerEvents($this, $this);
         @mkdir($this->getDataFolder()."players/");
         $cmdMap = $server->getCommandMap();
-        $cmdMap->registerAll("BlockAPILoader",
+        $cmdMap->registerAll("BlockAPI",
         [
             new checkblockstatusCMD("checkblockstatus"),
             new UnblockCMD("unblock"),
