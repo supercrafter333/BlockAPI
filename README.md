@@ -1,4 +1,4 @@
-# BlockAPI
+# BlockAPI   [![](https://poggit.pmmp.io/shield.state/BlockAPI)](https://poggit.pmmp.io/p/BlockAPI) [![](https://poggit.pmmp.io/shield.dl.total/BlockAPI)](https://poggit.pmmp.io/p/BlockAPI)
 
 This is a plugin and a API.
 PocketMines BanAPI is Okay, but I think that anybody will another API or a API with config and ban files.
@@ -17,6 +17,8 @@ This plugin is Licensed with the [Apache 2.0 License](/LICENSE)! Plugin by super
 ### API Documentation
 API documantation: [View](https://github.com/supercrafter333/BlockAPI/wiki/Documantation)
 
+### Downloads:
+Poggit: <a hraf="https://poggit.pmmp.io/r/111691/BlockAPI.phar">Download</a>
 
 ### Credits
 Owner: supercrafter333
