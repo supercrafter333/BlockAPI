@@ -40,11 +40,13 @@ class BlockAPILoader extends PluginBase implements Listener
         self::$instance = $this;
     }
 
-    public static function getInstance(): self {
+    public static function getInstance(): self
+    {
         return self::$instance;
     }
 
-    public function onPreLogin(PlayerPreLoginEvent $event) {
+    public function onPreLogin(PlayerPreLoginEvent $event)
+    {
         $player = $event->getPlayer();
         $name = $player->getName();
         if(BlockAPI::getUnBlockManager($name)->checkBlockStatus($name) == true) {

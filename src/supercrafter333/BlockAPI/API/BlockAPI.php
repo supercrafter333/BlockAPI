@@ -20,11 +20,13 @@ class BlockAPI
         $this->config = new Config(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $player->getName() . ".yml", 2);
     }
 
-    public static function getBlockManager(Player $player) {
+    public static function getBlockManager(Player $player)
+    {
         return new BlockAPI($player);
     }
 
-    public static function getUnblockManager(string $name) {
+    public static function getUnblockManager(string $name)
+    {
         return new OffBlockAPI($name);
     }
 
@@ -73,20 +75,24 @@ class BlockAPI
         return true;
     }
 
-    public function setBlocker(Player $player) {
+    public function setBlocker(Player $player)
+    {
         $this->config->set("blocker", $player->getName());
         $this->config->save();
     }
 
-    public function getBlockTime() {
+    public function getBlockTime()
+    {
         return $this->config->get("date");
     }
 
-    public function getBlockReason() {
+    public function getBlockReason()
+    {
         return $this->config->get("reason");
     }
 
-    public function getBlocker() {
+    public function getBlocker()
+    {
         return $this->config->get("blocker");
     }
 }

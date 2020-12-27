@@ -17,7 +17,8 @@ class OffBlockAPI
         $this->name = $name;
     }
 
-    public static function getExtraConfigurationManager(string $player): Config {
+    public static function getExtraConfigurationManager(string $player): Config
+    {
         return new Config(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $player . ".yml");
     }
 
