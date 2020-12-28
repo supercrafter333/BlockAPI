@@ -4,5 +4,6 @@ branches:
   - master
 projects:
   BlockAPI:
+    icon: "icon.png"
     path: ""
 ...
