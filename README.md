@@ -25,7 +25,7 @@ Owner: supercrafter333
 
 main developer: supercrafter333
 
-icon: --no icon-- are anybody can create a Icon for this Plugin? xD
+icon: <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Ffantasyfootballers.org%2Flaw%2Fdraftkings-fanduel-current-blocked-states%2F&psig=AOvVaw1AhHQfjO_XTgKRIJStcdww&ust=1609267243082000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCOjSsump8e0CFQAAAAAdAAAAABAW">Link</a>
 
 Thanks to: jasonwhynn10 (who helped me a bit)
 
