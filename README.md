@@ -18,7 +18,7 @@ This plugin is Licensed with the [Apache 2.0 License](/LICENSE)! Plugin by super
 API documantation: [View](https://github.com/supercrafter333/BlockAPI/wiki/Documantation)
 
 ### TODOs
-- [ ] More safety and unique configuration constructor calls (Suggestion: [View](https://github.com/supercrafter333/BlockAPI/issues/4))
+- [X] More safety and unique configuration constructor calls (Suggestion: [View](https://github.com/supercrafter333/BlockAPI/issues/4))
 
 ### Downloads:
 Poggit: <a href="https://poggit.pmmp.io/p/BlockAPI">Download</a>
