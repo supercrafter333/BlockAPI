@@ -16,7 +16,7 @@ class BlockAPI
     public function __construct(Player $player)
     {
         $this->player = $player;
-        $this->config = new Config(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $player->getName() . ".yml", 2);
+        $this->config = new Config(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $player->getName() . ".yml", Config::YAML);
     }
 
     public static function getBlockManager(Player $player)

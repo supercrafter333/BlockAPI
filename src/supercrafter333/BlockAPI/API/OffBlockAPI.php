@@ -18,7 +18,7 @@ class OffBlockAPI
 
     public static function getExtraConfigurationManager(string $player): Config
     {
-        return new Config(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $player . ".yml");
+        return new Config(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $player . ".yml", Config::YAML);
     }
 
     public function unBlock(): bool

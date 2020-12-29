@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b3b320f8-348d-47a7-9f3c-649a11321f66" name="Default Changelist" comment="Code cleanup">
+    <list default="true" id="b3b320f8-348d-47a7-9f3c-649a11321f66" name="Default Changelist" comment="Code cleanup 2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/API/BlockAPI.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/API/BlockAPI.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/API/OffBlockAPI.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/API/OffBlockAPI.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/Commands/UnblockCMD.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/Commands/UnblockCMD.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/Commands/checkblockstatusCMD.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/Commands/checkblockstatusCMD.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +74,9 @@
       <workItem from="1608935117658" duration="7000" />
       <workItem from="1609095651448" duration="297000" />
       <workItem from="1609097524654" duration="766000" />
-      <workItem from="1609101055032" duration="255000" />
+      <workItem from="1609101055032" duration="451000" />
+      <workItem from="1609183050504" duration="20000" />
+      <workItem from="1609283442266" duration="203000" />
     </task>
     <task id="LOCAL-00001" summary="Update README.md and add LICENSE">
       <created>1608309702647</created>
@@ -148,7 +148,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609101240881</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Code cleanup 2">
+      <created>1609101328590</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1609101328590</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,6 +194,7 @@
     <MESSAGE value="Update README.md" />
     <MESSAGE value="Uops xD" />
     <MESSAGE value="Code cleanup" />
-    <option name="LAST_COMMIT_MESSAGE" value="Code cleanup" />
+    <MESSAGE value="Code cleanup 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Code cleanup 2" />
   </component>
 </project>
