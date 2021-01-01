@@ -6,19 +6,19 @@ use DateTime;
 use pocketmine\utils\Config;
 use supercrafter333\BlockAPI\BlockAPILoader;
 
-class OffBlockAPI
+class OfflineBlockAPI
 {
-    
+
     public $name;
     protected $config;
 
-    public function __construct(string $name)
+    public function __construct(string $playername)
     {
-        $this->name = $name;
+        $this->name = $playername;
         $this->config = new Config(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $this->name . ".yml", Config::YAML);
     }
 
-    public static function getExtraConfigurationManager(string $player): Config
+    public static function getOfflineConfigurationManager(string $player): Config
     {
         return new Config(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $player . ".yml", Config::YAML);
     }
@@ -37,7 +37,7 @@ class OffBlockAPI
     {
         $date = new DateTime("now");
         if (file_exists(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $name . ".yml")) {
-            $exitsdate = new DateTime(OffBlockAPI::getExtraConfigurationManager($name)->get("date"));
+            $exitsdate = new DateTime(OfflineBlockAPI::getOfflineConfigurationManager($name)->get("date"));
             if ($date >= $exitsdate) {
                 return true;
             } else {
@@ -46,7 +46,7 @@ class OffBlockAPI
         }
         return true;
     }
-    
+
     public function setBlockTime(int $amount, string $timeformat)
     {
         $bantime = new DateTime('+' . $amount . ' ' . $timeformat);

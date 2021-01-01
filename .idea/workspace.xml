@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b3b320f8-348d-47a7-9f3c-649a11321f66" name="Default Changelist" comment="Add Offline Blocks">
+    <list default="true" id="b3b320f8-348d-47a7-9f3c-649a11321f66" name="Default Changelist" comment="Add Offline Blocks to API">
+      <change afterPath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/API/OfflineBlockAPI.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.changelogs.md" beforeDir="false" afterPath="$PROJECT_DIR$/.changelogs.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/API/BlockAPI.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/API/BlockAPI.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/API/OffBlockAPI.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/API/UnBlockAPI.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +85,7 @@
       <workItem from="1609334567055" duration="195000" />
       <workItem from="1609334910780" duration="206000" />
       <workItem from="1609507263468" duration="440000" />
-      <workItem from="1609507752758" duration="284000" />
+      <workItem from="1609507752758" duration="1397000" />
     </task>
     <task id="LOCAL-00001" summary="Update README.md and add LICENSE">
       <created>1608309702647</created>
@@ -187,7 +192,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609508028120</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Add Offline Blocks to API">
+      <created>1609508042924</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1609508042924</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -231,6 +243,7 @@
     <MESSAGE value="V1.0.2 preparations" />
     <MESSAGE value="Ups" />
     <MESSAGE value="Add Offline Blocks" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Offline Blocks" />
+    <MESSAGE value="Add Offline Blocks to API" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Offline Blocks to API" />
   </component>
 </project>
