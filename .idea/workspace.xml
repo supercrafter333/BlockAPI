@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b3b320f8-348d-47a7-9f3c-649a11321f66" name="Default Changelist" comment="Ups">
+    <list default="true" id="b3b320f8-348d-47a7-9f3c-649a11321f66" name="Default Changelist" comment="Add Offline Blocks">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/API/OffBlockAPI.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/API/OffBlockAPI.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +80,7 @@
       <workItem from="1609334567055" duration="195000" />
       <workItem from="1609334910780" duration="206000" />
       <workItem from="1609507263468" duration="440000" />
-      <workItem from="1609507752758" duration="258000" />
+      <workItem from="1609507752758" duration="284000" />
     </task>
     <task id="LOCAL-00001" summary="Update README.md and add LICENSE">
       <created>1608309702647</created>
@@ -181,7 +180,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609283947888</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Add Offline Blocks">
+      <created>1609508028120</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1609508028120</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,6 +230,7 @@
     <MESSAGE value="Unique config constructor calls" />
     <MESSAGE value="V1.0.2 preparations" />
     <MESSAGE value="Ups" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ups" />
+    <MESSAGE value="Add Offline Blocks" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Offline Blocks" />
   </component>
 </project>
