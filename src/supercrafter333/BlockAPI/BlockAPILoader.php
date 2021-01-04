@@ -24,7 +24,7 @@ class BlockAPILoader extends PluginBase implements Listener
         $this->saveResource("config.yml");
         $config = new Config($this->getDataFolder()."config.yml");
         $this->config = $config;
-        if (!$config->exists("version") && !$config->get("version") == "1.0.0") {
+        if (!$config->exists("version") && !$config->get("version") == "1.1.0") {
             $this->getLogger()->error("!!YOUR CONFIGURATION FILE IS OUTDATED!! Please delete the file config.yml and restart your server!");
             $pluginMgr->disablePlugin($this);
         }
