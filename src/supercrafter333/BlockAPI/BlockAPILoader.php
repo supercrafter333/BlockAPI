@@ -25,7 +25,7 @@ class BlockAPILoader extends PluginBase implements Listener
         $config = new Config($this->getDataFolder()."config.yml");
         $this->config = $config;
         if (!$config->exists("version") && !$config->get("version") == "1.1.0") {
-            $this->getLogger()->error("!!YOUR CONFIGURATION FILE IS OUTDATED!! Please delete the file config.yml and restart your server!");
+            $this->getServer()->getLogger()->critical("!!YOUR CONFIGURATION FILE IS OUTDATED!! Please delete the file config.yml and restart your server!");
             $pluginMgr->disablePlugin($this);
         }
         $pluginMgr->registerEvents($this, $this);
@@ -47,14 +47,13 @@ class BlockAPILoader extends PluginBase implements Listener
 
     public function onPreLogin(PlayerPreLoginEvent $event)
     {
-        $player = $event->getPlayer();
-        $name = $player->getName();
+        $playerx = $event->getPlayerInfo();
+        $name = $playerx->getUsername();
+        $player = $this->getServer()->getPlayerByPrefix($name);
         if(BlockAPI::getUnBlockManager($name)->checkBlockStatus($name) == true) {
             $player->close("", str_replace(["{line}"], ["\n"], str_replace(["{unblockdate}"], [BlockAPI::getBlockManager($player)->getBlockTime()], str_replace(["{reason}"], [BlockAPI::getBlockManager($player)->getBlockReason()], str_replace(["{blocker}"], [BlockAPI::getBlockManager($player)->getBlocker()], $this->config->get("you-are-blocked-screen-text"))))));
-            $event->setCancelled(true);
         } else {
             BlockAPI::getUnblockManager($name)->unBlock();
-            $event->setCancelled(false);
         }
     }
 }
