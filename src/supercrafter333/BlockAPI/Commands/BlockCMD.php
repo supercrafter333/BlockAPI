@@ -70,7 +70,7 @@ class BlockCMD extends Command
                 $s->sendMessage($prefix . $config->get("only-In-Game"));
             }
         } else {
-            $s->sendMessage($prefix . "no-permissions-to-use");
+            $s->sendMessage($prefix . $config->get("no-permissions-to-use"));
         }
     }
 }

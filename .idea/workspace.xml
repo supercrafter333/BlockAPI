@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b3b320f8-348d-47a7-9f3c-649a11321f66" name="Default Changelist" comment="Remove nested permissions in plugin.yml to fix bug, PMMP4 doesn't support this">
+    <list default="true" id="b3b320f8-348d-47a7-9f3c-649a11321f66" name="Default Changelist" comment="bug fixes for PMMP4">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/BlockAPILoader.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/BlockAPILoader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/Commands/BlockCMD.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/Commands/BlockCMD.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +47,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Downloads/PocketMine-MP-master-API4/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ich bin babing/API4-easycommands-by-supercrafter333" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -107,7 +107,7 @@
       <workItem from="1612187652378" duration="1324000" />
       <workItem from="1612193240475" duration="18000" />
       <workItem from="1612292590034" duration="428000" />
-      <workItem from="1612293043303" duration="338000" />
+      <workItem from="1612293043303" duration="1307000" />
     </task>
     <task id="LOCAL-00001" summary="Update README.md and add LICENSE">
       <created>1608309702647</created>
@@ -256,7 +256,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612292692841</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="bug fixes for PMMP4">
+      <created>1612293395629</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1612293395629</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -303,6 +310,7 @@
     <MESSAGE value="Add Offline Blocks to API" />
     <MESSAGE value="Add Support for PMMP API 4, not Tested, add Changelog für V1.1.0-API4-dev" />
     <MESSAGE value="Remove nested permissions in plugin.yml to fix bug, PMMP4 doesn't support this" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove nested permissions in plugin.yml to fix bug, PMMP4 doesn't support this" />
+    <MESSAGE value="bug fixes for PMMP4" />
+    <option name="LAST_COMMIT_MESSAGE" value="bug fixes for PMMP4" />
   </component>
 </project>
