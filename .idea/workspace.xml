@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b3b320f8-348d-47a7-9f3c-649a11321f66" name="Default Changelist" comment="Add Offline Blocks to API">
+    <list default="true" id="b3b320f8-348d-47a7-9f3c-649a11321f66" name="Default Changelist" comment="Add Support for PMMP API 4, not Tested, add Changelog für V1.1.0-API4-dev">
       <change beforePath="$PROJECT_DIR$/.changelogs.md" beforeDir="false" afterPath="$PROJECT_DIR$/.changelogs.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/plugin.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/API/BlockAPI.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/API/BlockAPI.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/Commands/BlockCMD.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/Commands/BlockCMD.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +105,9 @@
       <workItem from="1610624742181" duration="1224000" />
       <workItem from="1610890802908" duration="643000" />
       <workItem from="1612174528108" duration="336000" />
-      <workItem from="1612187652378" duration="705000" />
+      <workItem from="1612187652378" duration="1324000" />
+      <workItem from="1612193240475" duration="18000" />
+      <workItem from="1612292590034" duration="54000" />
     </task>
     <task id="LOCAL-00001" summary="Update README.md and add LICENSE">
       <created>1608309702647</created>
@@ -244,7 +242,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609775417860</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Add Support for PMMP API 4, not Tested, add Changelog für V1.1.0-API4-dev">
+      <created>1612188368097</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1612188368097</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -289,6 +294,7 @@
     <MESSAGE value="Ups" />
     <MESSAGE value="Add Offline Blocks" />
     <MESSAGE value="Add Offline Blocks to API" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Offline Blocks to API" />
+    <MESSAGE value="Add Support for PMMP API 4, not Tested, add Changelog für V1.1.0-API4-dev" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Support for PMMP API 4, not Tested, add Changelog für V1.1.0-API4-dev" />
   </component>
 </project>
