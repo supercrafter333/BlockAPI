@@ -18,11 +18,6 @@ class OfflineBlockAPI
         $this->config = new Config(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $this->name . ".yml", Config::YAML);
     }
 
-    public static function getOfflineConfigurationManager(string $player): Config
-    {
-        return new Config(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $player . ".yml", Config::YAML);
-    }
-
     public function unBlock(): bool
     {
         if (file_exists(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $this->name . ".yml")) {
@@ -37,7 +32,7 @@ class OfflineBlockAPI
     {
         $date = new DateTime("now");
         if (file_exists(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $name . ".yml")) {
-            $exitsdate = new DateTime(OfflineBlockAPI::getOfflineConfigurationManager($name)->get("date"));
+            $exitsdate = new DateTime($this->config->get("date"));
             if ($date >= $exitsdate) {
                 return true;
             } else {

@@ -18,11 +18,6 @@ class UnBlockAPI
         $this->config = new Config(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $this->name . ".yml", Config::YAML);
     }
 
-    public static function getUnBlockConfigurationManager(string $player): Config
-    {
-        return new Config(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $player . ".yml", Config::YAML);
-    }
-
     public function unBlock(): bool
     {
         if (file_exists(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $this->name . ".yml")) {
@@ -35,15 +30,25 @@ class UnBlockAPI
 
     public function checkBlockStatus(string $name): bool
     {
-        $date = new DateTime("now");
-        if (file_exists(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $name . ".yml")) {
-            $exitsdate = new DateTime(UnBlockAPI::getUnBlockConfigurationManager($name)->get("date"));
-            if ($date >= $exitsdate) {
-                return true;
-            } else {
-                return false;
+        $player = BlockAPILoader::getInstance()->getServer()->getPlayerExact($name);
+        if ($player !== null) {
+            $namex = $player->getName();
+            $date = new DateTime("now");
+            if (file_exists(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $namex . ".yml")) {
+                if ($this->config->exists("date")) {
+                    $exitsdate = new DateTime($this->config->get("date"));
+                    if ($date >= $exitsdate) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                } else {
+                    return false;
+                }
             }
+            return true;
+        } else {
+            return false;
         }
-        return true;
     }
 }

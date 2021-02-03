@@ -37,9 +37,7 @@ class BlockCMD extends Command
                                 BlockAPI::getBlockManager($selected)->setBlocker($s);
                                 $selected->kick(str_replace(["{line}"], ["\n"], str_replace(["{unblockdate}"], [BlockAPI::getBlockManager($selected)->getBlockTime()], str_replace(["{reason}"], [BlockAPI::getBlockManager($selected)->getBlockReason()], str_replace(["{blocker}"], [BlockAPI::getBlockManager($selected)->getBlocker()], $config->get("you-was-blocked-screen-text"))))));
                             } elseif ($args[2] == "h" || $args[2] == "hour" || $args[2] == "hours" || $args[2] == "stunde" || $args[2] == "stunden") {
-                                BlockAPI::getBlockManager($selected)->setBlockTime($args[1], "hours");
-                                BlockAPI::getBlockManager($selected)->setBlockReason($args[3]);
-                                BlockAPI::getBlockManager($selected)->setBlocker($s);
+                                BlockAPI::getBlockManager($selected)->setEasyTimeBlock($s->getName(), $args[1], "hours", $args[3]);
                                 $selected->kick(str_replace(["{line}"], ["\n"], str_replace(["{unblockdate}"], [BlockAPI::getBlockManager($selected)->getBlockTime()], str_replace(["{reason}"], [BlockAPI::getBlockManager($selected)->getBlockReason()], str_replace(["{blocker}"], [BlockAPI::getBlockManager($selected)->getBlocker()], $config->get("you-was-blocked-screen-text"))))));
                             } elseif ($args[2] == "d" || $args[2] == "day" || $args[2] == "day" || $args[2] == "day" || $args[2] == "tag" || $args[2] == "tage") {
                                 BlockAPI::getBlockManager($selected)->setBlockTime($args[1], "days");

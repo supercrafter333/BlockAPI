@@ -65,6 +65,25 @@ class BlockAPI
         $this->config->save();
     }
 
+    public function setEasyTimeBlock(string $muter, int $amount, string $timeformat, string $reason)
+    {
+        $bantime = new DateTime('+' . $amount . ' ' . $timeformat);
+        $date = new DateTime("now");
+        if (file_exists(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $this->getPlayerName() . ".yml")) {
+            $exitsdate = new DateTime($this->config->get("date"));
+            if ($date >= $exitsdate) {
+                BlockAPI::getUnblockManager($this->getPlayerName())->unBlock();
+            } else {
+                $this->config->set("date", $bantime->format("Y-m-d H:i:s"));
+                $this->config->save();
+                $this->config->set("reason", $reason);
+                $this->config->save();
+                $this->config->set("muter", $muter);
+                $this->config->save();
+            }
+        }
+    }
+
     public function checkBlockStatus(Player $player): bool
     {
         $date = new DateTime("now");
