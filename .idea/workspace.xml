@@ -1,15 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b3b320f8-348d-47a7-9f3c-649a11321f66" name="Default Changelist" comment="Ups.. I've forgot this xD">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/plugin.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/API/BlockAPI.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/API/BlockAPI.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/API/OfflineBlockAPI.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/API/OfflineBlockAPI.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/API/UnBlockAPI.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/API/UnBlockAPI.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/BlockAPILoader.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/BlockAPILoader.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/Commands/BlockCMD.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/Commands/BlockCMD.php" afterDir="false" />
+    <list default="true" id="b3b320f8-348d-47a7-9f3c-649a11321f66" name="Default Changelist" comment="some API changes, remove getConfigurationManager in all Managers, add setEasyTimeBlock to Block Manager, bring nested permissions without admin perm back in plugin.yml">
+      <change beforePath="$PROJECT_DIR$/.changelogs.md" beforeDir="false" afterPath="$PROJECT_DIR$/.changelogs.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +107,7 @@
       <workItem from="1612193240475" duration="18000" />
       <workItem from="1612292590034" duration="428000" />
       <workItem from="1612293043303" duration="1307000" />
-      <workItem from="1612357216884" duration="3548000" />
+      <workItem from="1612357216884" duration="3791000" />
     </task>
     <task id="LOCAL-00001" summary="Update README.md and add LICENSE">
       <created>1608309702647</created>
@@ -270,7 +263,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612293395629</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="some API changes, remove getConfigurationManager in all Managers, add setEasyTimeBlock to Block Manager, bring nested permissions without admin perm back in plugin.yml">
+      <created>1612360942816</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1612360942816</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -319,6 +319,7 @@
     <MESSAGE value="Remove nested permissions in plugin.yml to fix bug, PMMP4 doesn't support this" />
     <MESSAGE value="bug fixes for PMMP4" />
     <MESSAGE value="Ups.. I've forgot this xD" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ups.. I've forgot this xD" />
+    <MESSAGE value="some API changes, remove getConfigurationManager in all Managers, add setEasyTimeBlock to Block Manager, bring nested permissions without admin perm back in plugin.yml" />
+    <option name="LAST_COMMIT_MESSAGE" value="some API changes, remove getConfigurationManager in all Managers, add setEasyTimeBlock to Block Manager, bring nested permissions without admin perm back in plugin.yml" />
   </component>
 </project>
