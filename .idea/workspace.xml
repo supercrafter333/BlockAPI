@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b3b320f8-348d-47a7-9f3c-649a11321f66" name="Default Changelist" comment="some API changes, remove getConfigurationManager in all Managers, add setEasyTimeBlock to Block Manager, bring nested permissions without admin perm back in plugin.yml">
+    <list default="true" id="b3b320f8-348d-47a7-9f3c-649a11321f66" name="Default Changelist" comment="Update README.md">
       <change beforePath="$PROJECT_DIR$/.changelogs.md" beforeDir="false" afterPath="$PROJECT_DIR$/.changelogs.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +108,7 @@
       <workItem from="1612193240475" duration="18000" />
       <workItem from="1612292590034" duration="428000" />
       <workItem from="1612293043303" duration="1307000" />
-      <workItem from="1612357216884" duration="3791000" />
+      <workItem from="1612357216884" duration="4015000" />
     </task>
     <task id="LOCAL-00001" summary="Update README.md and add LICENSE">
       <created>1608309702647</created>
@@ -270,7 +271,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612360942816</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Update README.md">
+      <created>1612361029765</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1612361029765</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -306,7 +314,6 @@
     <MESSAGE value="Fixed API" />
     <MESSAGE value="Fixed some bugs" />
     <MESSAGE value="mini Change for Poggit" />
-    <MESSAGE value="Update README.md" />
     <MESSAGE value="Uops xD" />
     <MESSAGE value="Code cleanup" />
     <MESSAGE value="Code cleanup 2" />
@@ -320,6 +327,7 @@
     <MESSAGE value="bug fixes for PMMP4" />
     <MESSAGE value="Ups.. I've forgot this xD" />
     <MESSAGE value="some API changes, remove getConfigurationManager in all Managers, add setEasyTimeBlock to Block Manager, bring nested permissions without admin perm back in plugin.yml" />
-    <option name="LAST_COMMIT_MESSAGE" value="some API changes, remove getConfigurationManager in all Managers, add setEasyTimeBlock to Block Manager, bring nested permissions without admin perm back in plugin.yml" />
+    <MESSAGE value="Update README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update README.md" />
   </component>
 </project>
