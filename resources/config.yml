@@ -20,6 +20,6 @@ you-was-blocked-screen-text: "§4You are Blocked!{line}§bBlocked to: §e{unbloc
 prefix: "§f[§9Block§7API§f] §8» §r"
 
 #don't change this
-version: 1.0.0
+version: 1.1.0
 
 #plugin by supercrafter333 with Apache 2.0 License
