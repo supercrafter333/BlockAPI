@@ -24,9 +24,14 @@ class BlockAPI
         return new BlockAPI($player);
     }
 
-    public static function getUnblockManager(string $name)
+    public static function getUnblockManager(string $playername)
     {
-        return new OffBlockAPI($name);
+        return new UnBlockAPI($playername);
+    }
+
+    public static function getOfflineBlockManager(string $playername)
+    {
+        return new OfflineBlockAPI($playername);
     }
 
     public function getPlayer()
