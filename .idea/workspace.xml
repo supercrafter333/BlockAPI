@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b3b320f8-348d-47a7-9f3c-649a11321f66" name="Default Changelist" comment="Update Changelog for 1.1.0-API4-dev">
+    <list default="true" id="b3b320f8-348d-47a7-9f3c-649a11321f66" name="Default Changelist" comment="Fix bugs">
+      <change beforePath="$PROJECT_DIR$/.changelogs.md" beforeDir="false" afterPath="$PROJECT_DIR$/.changelogs.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/API/BlockAPI.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/API/BlockAPI.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/BlockAPILoader.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/BlockAPILoader.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +113,7 @@
       <workItem from="1612456463559" duration="34000" />
       <workItem from="1614199676620" duration="402000" />
       <workItem from="1614200102687" duration="3924000" />
-      <workItem from="1614251230342" duration="802000" />
+      <workItem from="1614251230342" duration="920000" />
     </task>
     <task id="LOCAL-00001" summary="Update README.md and add LICENSE">
       <created>1608309702647</created>
@@ -291,7 +290,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612361268095</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Fix bugs">
+      <created>1614252755513</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1614252755513</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -342,6 +348,7 @@
     <MESSAGE value="some API changes, remove getConfigurationManager in all Managers, add setEasyTimeBlock to Block Manager, bring nested permissions without admin perm back in plugin.yml" />
     <MESSAGE value="Update README.md" />
     <MESSAGE value="Update Changelog for 1.1.0-API4-dev" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update Changelog for 1.1.0-API4-dev" />
+    <MESSAGE value="Fix bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix bugs" />
   </component>
 </project>
