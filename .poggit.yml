@@ -2,6 +2,7 @@
 build-by-default: true
 branches:
   - master
+  - PMMP_API_4
 projects:
   BlockAPI:
     icon: "icon.png"
