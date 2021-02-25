@@ -33,7 +33,6 @@ class BlockAPI
     {
         return new OfflineBlockAPI($playername);
     }
-
     public function getPlayer()
     {
         return $this->player;
