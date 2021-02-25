@@ -8,6 +8,4 @@ projects:
   BlockAPI:
     icon: "icon.png"
     path: ""
-    lint:
-      phpstan: false
 ...
