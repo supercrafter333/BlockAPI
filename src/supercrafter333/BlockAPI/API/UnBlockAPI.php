@@ -8,7 +8,7 @@ use supercrafter333\BlockAPI\BlockAPILoader;
 
 class UnBlockAPI
 {
-    
+
     public $name;
     protected $config;
 
@@ -36,14 +36,15 @@ class UnBlockAPI
     public function checkBlockStatus(string $name): bool
     {
         $date = new DateTime("now");
-        if (file_exists(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $name . ".yml")) {
-            $exitsdate = new DateTime(UnBlockAPI::getUnBlockConfigurationManager($name)->get("date"));
-            if ($date >= $exitsdate) {
-                return true;
-            } else {
-                return false;
-            }
+        if (!file_exists(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $name . ".yml")) {
+            BlockAPI::getUnblockManager($name)->unBlock(); //To fix a bug
+            return false;
         }
-        return true;
+        $exitsdate = new DateTime(UnBlockAPI::getUnBlockConfigurationManager($name)->get("date"));
+        if ($date >= $exitsdate) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

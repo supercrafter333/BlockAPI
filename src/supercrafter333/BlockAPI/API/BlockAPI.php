@@ -68,15 +68,16 @@ class BlockAPI
     public function checkBlockStatus(Player $player): bool
     {
         $date = new DateTime("now");
-        if (file_exists(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $player->getName() . ".yml")) {
-            $exitsdate = new DateTime($this->config->get("date"));
-            if ($date >= $exitsdate) {
-                return true;
-            } else {
-                return false;
-            }
+        if (!file_exists(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $player->getName() . ".yml")) {
+            BlockAPI::getUnblockManager($player->getName())->unBlock(); //To fix a bug
+            return false;
         }
-        return true;
+        $exitsdate = new DateTime($this->config->get("date"));
+        if ($date >= $exitsdate) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public function setBlocker(Player $player)
