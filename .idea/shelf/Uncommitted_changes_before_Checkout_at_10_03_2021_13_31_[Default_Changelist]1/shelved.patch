@@ -1,0 +1,80 @@
+Index: src/supercrafter333/BlockAPI/API/BlockAPI.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\r\n\r\nnamespace supercrafter333\\BlockAPI\\API;\r\n\r\nuse DateTime;\r\nuse pocketmine\\player\\Player;\r\nuse pocketmine\\utils\\Config;\r\nuse supercrafter333\\BlockAPI\\BlockAPILoader;\r\n\r\nclass BlockAPI\r\n{\r\n\r\n    public $player;\r\n    protected $config;\r\n\r\n    public function __construct(Player $player)\r\n    {\r\n        $this->player = $player;\r\n        $this->config = new Config(BlockAPILoader::getInstance()->getDataFolder() . \"players/\" . $player->getName() . \".yml\", Config::YAML);\r\n    }\r\n\r\n    public static function getBlockManager(Player $player)\r\n    {\r\n        return new BlockAPI($player);\r\n    }\r\n\r\n    public static function getUnblockManager(string $playername)\r\n    {\r\n        return new UnBlockAPI($playername);\r\n    }\r\n\r\n    public static function getOfflineBlockManager(string $playername)\r\n    {\r\n        return new OfflineBlockAPI($playername);\r\n    }\r\n    public function getPlayer()\r\n    {\r\n        return $this->player;\r\n    }\r\n\r\n    public function getPlayerName()\r\n    {\r\n        return $this->player->getName();\r\n    }\r\n\r\n    public function setBlockTime(int $amount, string $timeformat)\r\n    {\r\n        $bantime = new DateTime('+' . $amount . ' ' . $timeformat);\r\n        $date = new DateTime(\"now\");\r\n        if (file_exists(BlockAPILoader::getInstance()->getDataFolder() . \"players/\" . $this->getPlayerName() . \".yml\")) {\r\n            $exitsdate = new DateTime($this->config->get(\"date\"));\r\n            if ($date >= $exitsdate) {\r\n                BlockAPI::getUnblockManager($this->getPlayerName())->unBlock();\r\n            } else {\r\n                $this->config->set(\"date\", $bantime->format(\"Y-m-d H:i:s\"));\r\n                $this->config->save();\r\n            }\r\n        }\r\n    }\r\n\r\n    public function setBlockReason(string $reason)\r\n    {\r\n        $this->config->set(\"reason\", $reason);\r\n        $this->config->save();\r\n    }\r\n\r\n    public function setEasyTimeBlock(string $muter, int $amount, string $timeformat, string $reason)\r\n    {\r\n        $bantime = new DateTime('+' . $amount . ' ' . $timeformat);\r\n        $date = new DateTime(\"now\");\r\n        if (file_exists(BlockAPILoader::getInstance()->getDataFolder() . \"players/\" . $this->getPlayerName() . \".yml\")) {\r\n            $exitsdate = new DateTime($this->config->get(\"date\"));\r\n            if ($date >= $exitsdate) {\r\n                BlockAPI::getUnblockManager($this->getPlayerName())->unBlock();\r\n            } else {\r\n                $this->config->set(\"date\", $bantime->format(\"Y-m-d H:i:s\"));\r\n                $this->config->save();\r\n                $this->config->set(\"reason\", $reason);\r\n                $this->config->save();\r\n                $this->config->set(\"muter\", $muter);\r\n                $this->config->save();\r\n            }\r\n        }\r\n    }\r\n\r\n    public function checkBlockStatus(Player $player): bool\r\n    {\r\n        $date = new DateTime(\"now\");\r\n        if (file_exists(BlockAPILoader::getInstance()->getDataFolder() . \"players/\" . $player->getName() . \".yml\")) {\r\n            $exitsdate = new DateTime($this->config->get(\"date\"));\r\n            if ($date >= $exitsdate) {\r\n                return true;\r\n            } else {\r\n                return false;\r\n            }\r\n        }\r\n        return true;\r\n    }\r\n\r\n    public function setBlocker(Player $player)\r\n    {\r\n        $this->config->set(\"blocker\", $player->getName());\r\n        $this->config->save();\r\n    }\r\n\r\n    public function getBlockTime()\r\n    {\r\n        return $this->config->get(\"date\");\r\n    }\r\n\r\n    public function getBlockReason()\r\n    {\r\n        return $this->config->get(\"reason\");\r\n    }\r\n\r\n    public function getBlocker()\r\n    {\r\n        return $this->config->get(\"blocker\");\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/supercrafter333/BlockAPI/API/BlockAPI.php b/src/supercrafter333/BlockAPI/API/BlockAPI.php
+--- a/src/supercrafter333/BlockAPI/API/BlockAPI.php	
++++ b/src/supercrafter333/BlockAPI/API/BlockAPI.php	
+@@ -86,15 +86,15 @@
+     public function checkBlockStatus(Player $player): bool
+     {
+         $date = new DateTime("now");
+-        if (file_exists(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $player->getName() . ".yml")) {
+-            $exitsdate = new DateTime($this->config->get("date"));
+-            if ($date >= $exitsdate) {
+-                return true;
+-            } else {
+-                return false;
+-            }
++        if (!file_exists(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $player->getName() . ".yml")) {
++            return false;
++        }
++        $exitsdate = new DateTime($this->config->get("date"));
++        if ($date >= $exitsdate) {
++            return true;
++        } else {
++            return false;
+         }
+-        return true;
+     }
+ 
+     public function setBlocker(Player $player)
+Index: src/supercrafter333/BlockAPI/BlockAPILoader.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\r\n\r\nnamespace supercrafter333\\BlockAPI;\r\n\r\nuse pocketmine\\event\\Listener;\r\nuse pocketmine\\event\\player\\PlayerJoinEvent;\r\nuse pocketmine\\event\\player\\PlayerKickEvent;\r\nuse pocketmine\\event\\player\\PlayerPreLoginEvent;\r\nuse pocketmine\\network\\mcpe\\NetworkSession;\r\nuse pocketmine\\network\\mcpe\\protocol\\DisconnectPacket;\r\nuse pocketmine\\network\\mcpe\\protocol\\PacketPool;\r\nuse pocketmine\\network\\NetworkSessionManager;\r\nuse pocketmine\\player\\Player;\r\nuse pocketmine\\plugin\\PluginBase;\r\nuse pocketmine\\utils\\Config;\r\nuse supercrafter333\\BlockAPI\\API\\BlockAPI;\r\nuse supercrafter333\\BlockAPI\\API\\KickMgr;\r\nuse supercrafter333\\BlockAPI\\Commands\\BlockCMD;\r\nuse supercrafter333\\BlockAPI\\Commands\\checkblockstatusCMD;\r\nuse supercrafter333\\BlockAPI\\Commands\\UnblockCMD;\r\n\r\nclass BlockAPILoader extends PluginBase implements Listener\r\n{\r\n\r\n    public static $instance;\r\n    public $config;\r\n\r\n    public function onEnable()\r\n    {\r\n        $server = $this->getServer();\r\n        $pluginMgr = $server->getPluginManager();\r\n        $this->saveResource(\"config.yml\");\r\n        $config = new Config($this->getDataFolder() . \"config.yml\");\r\n        $this->config = $config;\r\n        if (!$config->exists(\"version\") && !$config->get(\"version\") == \"1.1.0\") {\r\n            $this->getServer()->getLogger()->critical(\"!!YOUR CONFIGURATION FILE IS OUTDATED!! Please delete the file config.yml and restart your server!\");\r\n            $pluginMgr->disablePlugin($this);\r\n        }\r\n        $pluginMgr->registerEvents($this, $this);\r\n        @mkdir($this->getDataFolder() . \"players/\");\r\n        $cmdMap = $server->getCommandMap();\r\n        $cmdMap->registerAll(\"BlockAPI\",\r\n            [\r\n                new checkblockstatusCMD(\"checkblockstatus\"),\r\n                new UnblockCMD(\"unblock\"),\r\n                new BlockCMD(\"block\")\r\n            ]);\r\n        self::$instance = $this;\r\n    }\r\n\r\n    public static function getInstance(): self\r\n    {\r\n        return self::$instance;\r\n    }\r\n\r\n    /*public function onPreLogin(PlayerPreLoginEvent $event)\r\n    {\r\n        $playerx = $event->getPlayerInfo();\r\n        $lul = $playerx->getExtraData();\r\n        $name = $playerx->getUsername();\r\n        $player = $this->getServer()->getPlayerByPrefix($name);\r\n        if ($player instanceof Player) {\r\n            $this->kickPlayerTest($player, \"test\");\r\n            if (BlockAPI::getUnBlockManager($name)->checkBlockStatus($name) == true) {\r\n                $this->getLogger()->warning(\"This player is banned!\");\r\n\r\n                $eventpk = new PlayerKickEvent($player, str_replace([\"{line}\"], [\"\\n\"], str_replace([\"{unblockdate}\"], [BlockAPI::getBlockManager($player)->getBlockTime()], str_replace([\"{reason}\"], [BlockAPI::getBlockManager($player)->getBlockReason()], str_replace([\"{blocker}\"], [BlockAPI::getBlockManager($player)->getBlocker()], $this->config->get(\"you-are-blocked-screen-text\"))))), true);\r\n                //$player->disconnect(str_replace([\"{line}\"], [\"\\n\"], str_replace([\"{unblockdate}\"], [BlockAPI::getBlockManager($player)->getBlockTime()], str_replace([\"{reason}\"], [BlockAPI::getBlockManager($player)->getBlockReason()], str_replace([\"{blocker}\"], [BlockAPI::getBlockManager($player)->getBlocker()], $this->config->get(\"you-are-blocked-screen-text\"))))), true);\r\n                $player->kick(str_replace([\"{line}\"], [\"\\n\"], str_replace([\"{unblockdate}\"], [BlockAPI::getBlockManager($player)->getBlockTime()], str_replace([\"{reason}\"], [BlockAPI::getBlockManager($player)->getBlockReason()], str_replace([\"{blocker}\"], [BlockAPI::getBlockManager($player)->getBlocker()], $this->config->get(\"you-are-blocked-screen-text\"))))));\r\n            } else {\r\n                BlockAPI::getUnblockManager($name)->unBlock();\r\n            }\r\n        }\r\n    }*/\r\n\r\n    public function onJoin(PlayerJoinEvent $event)\r\n    {\r\n        $player = $event->getPlayer();\r\n        $name = $player->getName();\r\n        if (BlockAPI::getUnblockManager($name)->checkBlockStatus($name) == true) {\r\n            $player->kick(str_replace([\"{line}\"], [\"\\n\"], str_replace([\"{unblockdate}\"], [BlockAPI::getBlockManager($player)->getBlockTime()], str_replace([\"{reason}\"], [BlockAPI::getBlockManager($player)->getBlockReason()], str_replace([\"{blocker}\"], [BlockAPI::getBlockManager($player)->getBlocker()], $this->config->get(\"you-are-blocked-screen-text\"))))));\r\n        } else {\r\n            BlockAPI::getUnblockManager($name)->unBlock();\r\n        }\r\n    }\r\n\r\n    /*public function kickPlayerByDefaultReason(Player $player)\r\n    {\r\n        $reason = str_replace([\"{line}\"], [\"\\n\"], str_replace([\"{unblockdate}\"], [BlockAPI::getBlockManager($player)->getBlockTime()], str_replace([\"{reason}\"], [BlockAPI::getBlockManager($player)->getBlockReason()], str_replace([\"{blocker}\"], [BlockAPI::getBlockManager($player)->getBlocker()], $this->config->get(\"you-are-blocked-screen-text\")))));\r\n        KickMgr::getKickMgr()->kickPlayer($player, $reason);\r\n    }\r\n\r\n    public function kickPlayer(NetworkSession $session, string $reason, Player $player)\r\n    {\r\n        $kick = new DisconnectPacket();\r\n        $kick->message = $reason;\r\n        $session->sendDataPacket($kick);\r\n    }\r\n\r\n    public function kickPlayerTest(Player $player, string $reason)\r\n    {\r\n        $event = new PlayerKickEvent($player, $reason, $player->getLeaveMessage());\r\n        $event->call();\r\n    }*/\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/supercrafter333/BlockAPI/BlockAPILoader.php b/src/supercrafter333/BlockAPI/BlockAPILoader.php
+--- a/src/supercrafter333/BlockAPI/BlockAPILoader.php	
++++ b/src/supercrafter333/BlockAPI/BlockAPILoader.php	
+@@ -4,17 +4,10 @@
+ 
+ use pocketmine\event\Listener;
+ use pocketmine\event\player\PlayerJoinEvent;
+-use pocketmine\event\player\PlayerKickEvent;
+-use pocketmine\event\player\PlayerPreLoginEvent;
+-use pocketmine\network\mcpe\NetworkSession;
+-use pocketmine\network\mcpe\protocol\DisconnectPacket;
+-use pocketmine\network\mcpe\protocol\PacketPool;
+-use pocketmine\network\NetworkSessionManager;
+-use pocketmine\player\Player;
++use pocketmine\event\player\PlayerLoginEvent;
+ use pocketmine\plugin\PluginBase;
+ use pocketmine\utils\Config;
+ use supercrafter333\BlockAPI\API\BlockAPI;
+-use supercrafter333\BlockAPI\API\KickMgr;
+ use supercrafter333\BlockAPI\Commands\BlockCMD;
+ use supercrafter333\BlockAPI\Commands\checkblockstatusCMD;
+ use supercrafter333\BlockAPI\Commands\UnblockCMD;
+@@ -84,6 +77,16 @@
+         }
+     }
+ 
++    public function onLogin(PlayerLoginEvent $event)
++    {
++        $player = $event->getPlayer();
++        $name = $player->getName();
++        if (BlockAPI::getUnblockManager($name)->checkBlockStatus($name) == true) {
++            $reason = str_replace(["{line}"], ["\n"], str_replace(["{unblockdate}"], [BlockAPI::getBlockManager($player)->getBlockTime()], str_replace(["{reason}"], [BlockAPI::getBlockManager($player)->getBlockReason()], str_replace(["{blocker}"], [BlockAPI::getBlockManager($player)->getBlocker()], $this->config->get("you-are-blocked-screen-text")))));
++            $player->kick($reason, $player->getLeaveMessage());
++        }
++    }
++
+     /*public function kickPlayerByDefaultReason(Player $player)
+     {
+         $reason = str_replace(["{line}"], ["\n"], str_replace(["{unblockdate}"], [BlockAPI::getBlockManager($player)->getBlockTime()], str_replace(["{reason}"], [BlockAPI::getBlockManager($player)->getBlockReason()], str_replace(["{blocker}"], [BlockAPI::getBlockManager($player)->getBlocker()], $this->config->get("you-are-blocked-screen-text")))));
