@@ -4,16 +4,21 @@ namespace supercrafter333\BlockAPI\Commands;
 
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
+use pocketmine\command\PluginIdentifiableCommand;
 use pocketmine\Player;
+use pocketmine\plugin\Plugin;
 use pocketmine\utils\Config;
 use supercrafter333\BlockAPI\BlockAPILoader;
 use supercrafter333\BlockAPI\API\BlockAPI;
 
-class BlockCMD extends Command
+class BlockCMD extends Command implements PluginIdentifiableCommand
 {
+
+    private $plugin;
 
     public function __construct(string $name, string $description = "", string $usageMessage = null, array $aliases = [])
     {
+        $this->plugin = BlockAPILoader::getInstance();
         parent::__construct("block", "§bBlock a Player!", "/block <player> <time> <i/h/d/m/y> <reason>", ["blockplayer"]);
     }
 
@@ -72,5 +77,10 @@ class BlockCMD extends Command
         } else {
             $s->sendMessage($prefix . $config->get("no-permissions-to-use"));
         }
+    }
+
+    public function getPlugin(): Plugin
+    {
+        return $this->plugin;
     }
 }

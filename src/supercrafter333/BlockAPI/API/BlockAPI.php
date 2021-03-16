@@ -4,6 +4,7 @@ namespace supercrafter333\BlockAPI\API;
 
 use DateTime;
 use pocketmine\Player;
+use pocketmine\Server;
 use pocketmine\utils\Config;
 use supercrafter333\BlockAPI\BlockAPILoader;
 
@@ -12,11 +13,13 @@ class BlockAPI
 
     public $player;
     protected $config;
+    protected $Xconfig;
 
     public function __construct(Player $player)
     {
         $this->player = $player;
         $this->config = new Config(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $player->getName() . ".yml", Config::YAML);
+        $this->Xconfig = new Config(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $player->getName() . ".yml");
     }
 
     public static function getBlockManager(Player $player)
@@ -68,15 +71,15 @@ class BlockAPI
     public function checkBlockStatus(Player $player): bool
     {
         $date = new DateTime("now");
-        if (!file_exists(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $player->getName() . ".yml")) {
-            BlockAPI::getUnblockManager($player->getName())->unBlock(); //To fix a bug
+        if (!file_exists(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $name . ".yml")) {
             return false;
-        }
-        $exitsdate = new DateTime($this->config->get("date"));
-        if ($date >= $exitsdate) {
-            return true;
         } else {
-            return false;
+            $exitsdate = new DateTime($this->Xconfig->get("date"));
+            if ($date >= $exitsdate) {
+                return false;
+            } else {
+                return true;
+            }
         }
     }
 
@@ -88,16 +91,16 @@ class BlockAPI
 
     public function getBlockTime()
     {
-        return $this->config->get("date");
+        return $this->Xconfig->get("date");
     }
 
     public function getBlockReason()
     {
-        return $this->config->get("reason");
+        return $this->Xconfig->get("reason");
     }
 
     public function getBlocker()
     {
-        return $this->config->get("blocker");
+        return $this->Xconfig->get("blocker");
     }
 }

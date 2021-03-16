@@ -11,11 +11,13 @@ class OfflineBlockAPI
 
     public $name;
     protected $config;
+    protected $Xconfig;
 
     public function __construct(string $playername)
     {
         $this->name = $playername;
         $this->config = new Config(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $this->name . ".yml", Config::YAML);
+        $this->Xconfig = new Config(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $this->name . ".yml");
     }
 
     public static function getOfflineConfigurationManager(string $player): Config
@@ -37,14 +39,14 @@ class OfflineBlockAPI
     {
         $date = new DateTime("now");
         if (!file_exists(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $name . ".yml")) {
-            BlockAPI::getUnblockManager($name)->unBlock(); //To fix a bug
             return false;
-        }
-        $exitsdate = new DateTime(UnBlockAPI::getUnBlockConfigurationManager($name)->get("date"));
-        if ($date >= $exitsdate) {
-            return true;
         } else {
-            return false;
+            $exitsdate = new DateTime($this->Xconfig->get("date"));
+            if ($date >= $exitsdate) {
+                return false;
+            } else {
+                return true;
+            }
         }
     }
 
@@ -77,16 +79,16 @@ class OfflineBlockAPI
 
     public function getBlockReason()
     {
-        return $this->config->get("reason");
+        return $this->Xconfig->get("reason");
     }
 
     public function getBlocker()
     {
-        return $this->config->get("blocker");
+        return $this->Xconfig->get("blocker");
     }
 
     public function getBlockTime()
     {
-        return $this->config->get("date");
+        return $this->Xconfig->get("date");
     }
 }
