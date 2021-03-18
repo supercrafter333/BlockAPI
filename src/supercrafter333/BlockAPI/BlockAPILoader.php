@@ -45,6 +45,18 @@ class BlockAPILoader extends PluginBase implements Listener
         return self::$instance;
     }
 
+    public function onPreLogin(PlayerPreLoginEvent $event)
+    {
+        $player = $event->getPlayer();
+        $name = $player->getName();
+        if (BlockAPI::getUnblockManager($name)->checkBlockStatus($name) == true) {
+            $player->close("", str_replace(["{line}"], ["\n"], str_replace(["{unblockdate}"], [BlockAPI::getBlockManager($player)->getBlockTime()], str_replace(["{reason}"], [BlockAPI::getBlockManager($player)->getBlockReason()], str_replace(["{blocker}"], [BlockAPI::getBlockManager($player)->getBlocker()], $this->config->get("you-are-blocked-screen-text"))))));
+            $event->setCancelled(true);
+        } else {
+            $event->setCancelled(false);
+        }
+    }
+
     /*public function onPreLogin(PlayerPreLoginEvent $event)
     {
         $playerx = $event->getPlayerInfo();
@@ -64,17 +76,6 @@ class BlockAPILoader extends PluginBase implements Listener
             }
         }
     }*/
-
-    public function onPreLogin(PlayerPreLoginEvent $event)
-    {
-        $player = $event->getPlayer();
-        $name = $player->getName();
-        if (BlockAPI::getUnblockManager($name)->checkBlockStatus($name) == true) {
-            $player->close("", str_replace(["{line}"], ["\n"], str_replace(["{unblockdate}"], [BlockAPI::getBlockManager($player)->getBlockTime()], str_replace(["{reason}"], [BlockAPI::getBlockManager($player)->getBlockReason()], str_replace(["{blocker}"], [BlockAPI::getBlockManager($player)->getBlocker()], $this->config->get("you-are-blocked-screen-text"))))));
-        } else {
-            BlockAPI::getUnblockManager($name)->unBlock();
-        }
-    }
 
 
     //PM4 Codes, idk why this part is here but I'll don't remove it xDDDDDDD

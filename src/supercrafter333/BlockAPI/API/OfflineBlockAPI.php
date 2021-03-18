@@ -39,14 +39,15 @@ class OfflineBlockAPI
     {
         $date = new DateTime("now");
         if (!file_exists(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $name . ".yml")) {
+            BlockAPI::getUnblockManager($name)->superUnBlock();
             return false;
+        } elseif (file_get_contents(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $name . ".yml") == false) {
+            BlockAPI::getUnblockManager($name)->superUnBlock();
+            return false;
+        } elseif ($date < new DateTime($this->Xconfig->get("date"))) {
+            return true;
         } else {
-            $exitsdate = new DateTime($this->Xconfig->get("date"));
-            if ($date >= $exitsdate) {
-                return false;
-            } else {
-                return true;
-            }
+            return false;
         }
     }
 
