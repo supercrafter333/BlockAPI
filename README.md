@@ -2,6 +2,7 @@
 
 ## Infomation:
 **BlockAPI is buggy at this time! Don't use it!**
+<hr/>
 
 This is a plugin and a API.
 PocketMines BanAPI is Okay, but I think that anybody will another API or a API with config and ban files.
