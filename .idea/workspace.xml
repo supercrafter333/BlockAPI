@@ -1,17 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b3b320f8-348d-47a7-9f3c-649a11321f66" name="Default Changelist" comment="try2fix1bug&#10;- SPOILER: buggy :(">
-      <change beforePath="$PROJECT_DIR$/.changelogs.md" beforeDir="false" afterPath="$PROJECT_DIR$/.changelogs.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/plugin.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/API/BlockAPI.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/API/BlockAPI.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/API/OfflineBlockAPI.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/API/OfflineBlockAPI.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/API/UnBlockAPI.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/API/UnBlockAPI.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/BlockAPILoader.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/BlockAPILoader.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/Commands/UnblockCMD.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/Commands/UnblockCMD.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/Commands/checkblockstatusCMD.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/supercrafter333/BlockAPI/Commands/checkblockstatusCMD.php" afterDir="false" />
+    <list default="true" id="b3b320f8-348d-47a7-9f3c-649a11321f66" name="Default Changelist" comment="Release V1.2.0 - important bug fix&#10;- API changes (remove public config and Xconfig variable in the UnBlockManager, add `getPlayerData()` to all Managers)&#10;- Fix an very important bug (The player data was created everytime, that triggered the block check)&#10;- config Update (add `console-player-is-unblocked` message for the unblock command)&#10;- Version bump (V1.1.1 --&gt; V1.2.0)">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +102,7 @@
       <workItem from="1615722563669" duration="379000" />
       <workItem from="1615914142326" duration="4097000" />
       <workItem from="1616087931024" duration="2055000" />
-      <workItem from="1616432367652" duration="2034000" />
+      <workItem from="1616432367652" duration="2269000" />
     </task>
     <task id="LOCAL-00001" summary="Update README.md and add LICENSE">
       <created>1608309702647</created>
@@ -274,7 +265,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616089442790</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Release V1.2.0 - important bug fix&#10;- API changes (remove public config and Xconfig variable in the UnBlockManager, add `getPlayerData()` to all Managers)&#10;- Fix an very important bug (The player data was created everytime, that triggered the block check)&#10;- config Update (add `console-player-is-unblocked` message for the unblock command)&#10;- Version bump (V1.1.1 --&gt; V1.2.0)">
+      <created>1616434608882</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1616434608882</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -322,6 +320,7 @@
     <MESSAGE value="Update README.md" />
     <MESSAGE value="some fixes" />
     <MESSAGE value="try2fix1bug&#10;- SPOILER: buggy :(" />
-    <option name="LAST_COMMIT_MESSAGE" value="try2fix1bug&#10;- SPOILER: buggy :(" />
+    <MESSAGE value="Release V1.2.0 - important bug fix&#10;- API changes (remove public config and Xconfig variable in the UnBlockManager, add `getPlayerData()` to all Managers)&#10;- Fix an very important bug (The player data was created everytime, that triggered the block check)&#10;- config Update (add `console-player-is-unblocked` message for the unblock command)&#10;- Version bump (V1.1.1 --&gt; V1.2.0)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Release V1.2.0 - important bug fix&#10;- API changes (remove public config and Xconfig variable in the UnBlockManager, add `getPlayerData()` to all Managers)&#10;- Fix an very important bug (The player data was created everytime, that triggered the block check)&#10;- config Update (add `console-player-is-unblocked` message for the unblock command)&#10;- Version bump (V1.1.1 --&gt; V1.2.0)" />
   </component>
 </project>
