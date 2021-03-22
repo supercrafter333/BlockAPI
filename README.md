@@ -1,5 +1,8 @@
 # BlockAPI   [![](https://poggit.pmmp.io/shield.state/BlockAPI)](https://poggit.pmmp.io/p/BlockAPI) [![](https://poggit.pmmp.io/shield.dl.total/BlockAPI)](https://poggit.pmmp.io/p/BlockAPI)
 
+## Infomation:
+**BlockAPI is buggy at this time! Don't use it!**
+
 This is a plugin and a API.
 PocketMines BanAPI is Okay, but I think that anybody will another API or a API with config and ban files.
 This plugin contains Commands and a API to ban players with timer.
