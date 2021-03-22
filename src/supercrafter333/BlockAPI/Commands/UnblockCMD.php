@@ -29,6 +29,7 @@ class UnblockCMD extends Command implements PluginIdentifiableCommand
             if (count($args) >= 1) {
                 if (BlockAPI::getUnblockManager($args[0])->unBlock() == true) {
                     $s->sendMessage($prefix . str_replace(["{name}"], [$args[0]], $config->get("successful-unblocked")));
+                    $this->getPlugin()->getLogger()->warning($prefix . str_replace(["{name}"], [$args[0]], $config->get("console-player-is-unblocked")));
                 } else {
                     $s->sendMessage($prefix . str_replace(["{name}"], [$args[0]], $config->get("player-is-not-blocked")));
                 }

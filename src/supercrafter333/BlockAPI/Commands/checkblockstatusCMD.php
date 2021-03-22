@@ -27,20 +27,16 @@ class checkblockstatusCMD extends Command implements PluginIdentifiableCommand
         $prefix = $config->get("prefix");
         if ($s->hasPermission("blockapi.checkblockstatus.cmd")) {
             if (count($args) >= 1) {
-                if (!file_exists(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $args[0] . ".yml")) {
+                if (BlockAPI::getUnblockManager($args[0])->checkBlockStatus($args[0]) == false) { //player is not blocked
                     $s->sendMessage($prefix . str_replace(["{name}"], [$args[0]], $config->get("player-is-not-blocked")));
                     return;
                 }
-                if (BlockAPI::getUnblockManager($args[0])->checkBlockStatus($args[0]) == false) {
-                    $s->sendMessage($prefix . str_replace(["{name}"], [$args[0]], $config->get("player-is-not-blocked")));
-                    return;
-                }
-                $s->sendMessage($prefix . str_replace(["{name}"], [$args[0]], $config->get("player-is-blocked")));
+                $s->sendMessage($prefix . str_replace(["{name}"], [$args[0]], $config->get("player-is-blocked"))); //player is blocked
                 return;
-                } else {
+            } else {
                 $s->sendMessage($this->getUsage());
             }
-            } else {
+        } else {
             $s->sendMessage($prefix . $config->get("no-permissions-to-use"));
             return;
         }

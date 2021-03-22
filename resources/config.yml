@@ -12,6 +12,7 @@ no-permissions-to-use: "§4You don't have permissions to use this!"
 successful-unblocked: "§aYou've successfully unblocked the player {name}!"
 player-is-blocked: "§bThe player {name} is blocked!"
 player-is-not-blocked: "§bThe player {name} isn't blocked!"
+console-player-is-unblocked: "The player {name} is no longer blocked!"
 #uses: {line} {unblockdate} {blocker} {reason}
 you-are-blocked-screen-text: "§4You are Blocked! You can't Join to this server when you are blocked!{line}§bBlocked to: §e{unblockdate}{line}§bBlocked by: §e{blocker}{line}§bReason: §e{reason}"
 you-was-blocked-screen-text: "§4You are Blocked!{line}§bBlocked to: §e{unblockdate}{line}§bBlocked by: §e{blocker}{line}§bReason: §e{reason}"
@@ -20,6 +21,6 @@ you-was-blocked-screen-text: "§4You are Blocked!{line}§bBlocked to: §e{unbloc
 prefix: "§f[§9Block§7API§f] §8» §r"
 
 #don't change this
-version: "1.1.1"
+version: "1.2.0"
 
 #plugin by supercrafter333 with Apache 2.0 License

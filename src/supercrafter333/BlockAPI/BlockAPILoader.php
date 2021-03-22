@@ -25,7 +25,7 @@ class BlockAPILoader extends PluginBase implements Listener
         $this->saveResource("config.yml");
         $config = new Config($this->getDataFolder() . "config.yml");
         $this->config = $config;
-        if (!$config->exists("version") && !$config->get("version") == "1.1.1") {
+        if (!$config->exists("version") && !$config->get("version") == "1.2.0") {
             $this->getServer()->getLogger()->critical("!!YOUR CONFIGURATION FILE IS OUTDATED!! Please delete the file config.yml and restart your server!");
             $pluginMgr->disablePlugin($this);
         }
@@ -49,10 +49,10 @@ class BlockAPILoader extends PluginBase implements Listener
     {
         $player = $event->getPlayer();
         $name = $player->getName();
-        if (BlockAPI::getUnblockManager($name)->checkBlockStatus($name) == true) {
+        if (BlockAPI::getUnblockManager($name)->checkBlockStatus($name) == true) { //player is blocked
             $player->close("", str_replace(["{line}"], ["\n"], str_replace(["{unblockdate}"], [BlockAPI::getBlockManager($player)->getBlockTime()], str_replace(["{reason}"], [BlockAPI::getBlockManager($player)->getBlockReason()], str_replace(["{blocker}"], [BlockAPI::getBlockManager($player)->getBlocker()], $this->config->get("you-are-blocked-screen-text"))))));
             $event->setCancelled(true);
-        } else {
+        } else { //player is not or no longer blocked
             $event->setCancelled(false);
         }
     }

@@ -25,6 +25,11 @@ class OfflineBlockAPI
         return new Config(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $player . ".yml", Config::YAML);
     }
 
+    public function getPlayerData(): Config //only read the data with this function don't set anything!!!
+    {
+        return new Config(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $this->name . ".yml", Config::YAML);
+    }
+
     public function unBlock(): bool
     {
         if (file_exists(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $this->name . ".yml")) {

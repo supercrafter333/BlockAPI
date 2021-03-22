@@ -10,19 +10,20 @@ class UnBlockAPI
 {
 
     public $name;
-    protected $config;
-    protected $Xconfig;
 
     public function __construct(string $playername)
     {
         $this->name = $playername;
-        $this->config = new Config(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $this->name . ".yml", Config::YAML);
-        $this->Xconfig = new Config(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $this->name . ".yml");
     }
 
     public static function getUnBlockConfigurationManager(string $player): Config
     {
         return new Config(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $player . ".yml", Config::YAML);
+    }
+
+    public function getPlayerData(): Config //only read the data with this function don't set anything!!!
+    {
+        return new Config(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $this->name . ".yml", Config::YAML);
     }
 
     public function unBlock(): bool
@@ -44,12 +45,11 @@ class UnBlockAPI
     {
         $date = new DateTime("now");
         if (!file_exists(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $name . ".yml")) {
-            $this->superUnBlock();
             return false;
         } elseif (file_get_contents(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $name . ".yml") == false) {
             $this->superUnBlock();
             return false;
-        } elseif ($date < new DateTime($this->Xconfig->get("date"))) {
+        } elseif ($date < new DateTime($this->getPlayerData()->get("date"))) {
             return true;
         } else {
             return false;

@@ -4,7 +4,6 @@ namespace supercrafter333\BlockAPI\API;
 
 use DateTime;
 use pocketmine\Player;
-use pocketmine\Server;
 use pocketmine\utils\Config;
 use supercrafter333\BlockAPI\BlockAPILoader;
 
@@ -12,12 +11,14 @@ class BlockAPI
 {
 
     public $player;
+    public $name;
     protected $config;
     protected $Xconfig;
 
     public function __construct(Player $player)
     {
         $this->player = $player;
+        $this->name = $player->getName();
         $this->config = new Config(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $player->getName() . ".yml", Config::YAML);
         $this->Xconfig = new Config(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $player->getName() . ".yml");
     }
@@ -45,6 +46,11 @@ class BlockAPI
     public function getPlayerName()
     {
         return $this->player->getName();
+    }
+
+    public function getPlayerData(): Config //only read the data with this function don't set anything!!!
+    {
+        return new Config(BlockAPILoader::getInstance()->getDataFolder() . "players/" . $this->name . ".yml", Config::YAML);
     }
 
     public function setBlockTime(int $amount, string $timeformat)
