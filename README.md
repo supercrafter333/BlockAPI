@@ -1,4 +1,6 @@
-# BlockAPI   [![](https://poggit.pmmp.io/shield.state/BlockAPI)](https://poggit.pmmp.io/p/BlockAPI) [![](https://poggit.pmmp.io/shield.dl.total/BlockAPI)](https://poggit.pmmp.io/p/BlockAPI)
+# BlockAPI - ARCHIVED   [![](https://poggit.pmmp.io/shield.state/BlockAPI)](https://poggit.pmmp.io/p/BlockAPI) [![](https://poggit.pmmp.io/shield.dl.total/BlockAPI)](https://poggit.pmmp.io/p/BlockAPI)
+
+## OUT OF DATE!!
 
 This is a plugin and a API.
 PocketMines BanAPI is Okay, but I think that anybody will another API or a API with config and ban files.
